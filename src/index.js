@@ -15,9 +15,8 @@ const store = configureStore({
     products: productsReducer,
     [productsApi.reducerPath]: productsApi.reducer,
   },
-  middleware:(getDefaultMiddleware)=>{
-    getDefaultMiddleware().concat(productsApi.middleware);
-  },
+  middleware:(getDefaultMiddleware)=>
+    getDefaultMiddleware().concat(productsApi.middleware),
 });
 
 store.dispatch(productsFetch());
